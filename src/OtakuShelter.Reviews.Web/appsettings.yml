@@ -1,0 +1,23 @@
+name: reviews
+
+database:
+  host: database.otaku-shelter.ru
+  port: 5432
+  database: reviews
+  userid: reviews
+  migrationstable: migrations
+
+jwt:
+  issuer: account.otaku-shelter.ru
+  audience: otaku-shelter.ru
+
+rabbitmq:
+  instancename: reviews
+  username: reviews
+  port: 5672
+  virtualhost: /
+  hostname: rabbitmq.otaku-shelter.ru
+
+roles:
+  admin: admin
+  user: user
