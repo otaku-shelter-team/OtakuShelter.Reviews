@@ -1,6 +1,9 @@
 using System;
 
+using HealthChecks.UI.Client;
+
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -32,8 +35,8 @@ namespace OtakuShelter.Reviews
 		public void Configure(IApplicationBuilder app)
 		{
 			app.EnsureDatabaseMigrated();
-			
-			app.UseHealthChecks("/health");
+
+			app.UseReviewsHealthchecks();
 			app.UseAuthentication();
 			app.UseReviewsSwagger();
 			app.UseMvc();

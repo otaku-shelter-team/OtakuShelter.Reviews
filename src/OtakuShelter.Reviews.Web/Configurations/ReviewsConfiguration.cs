@@ -3,6 +3,7 @@ namespace OtakuShelter.Reviews
 	public class ReviewsConfiguration
 	{
 		public string Name { get; set; }
+		public string Version { get; set; }
 		
 		public ReviewsDatabaseConfiguration Database { get; set; }
 		public ReviewsJwtConfiguration Jwt { get; set; }
