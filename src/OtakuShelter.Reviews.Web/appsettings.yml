@@ -1,7 +1,7 @@
 name: reviews
 
 database:
-  host: database.otaku-shelter.ru
+  host: databases.staging.otaku-shelter.ru
   port: 5432
   database: reviews
   userid: reviews
@@ -16,7 +16,7 @@ rabbitmq:
   username: reviews
   port: 5672
   virtualhost: /
-  hostname: rabbitmq.otaku-shelter.ru
+  hostname: rabbitmq.staging.otaku-shelter.ru
 
 roles:
   admin: admin
