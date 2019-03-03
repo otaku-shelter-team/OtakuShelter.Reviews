@@ -10,11 +10,18 @@ namespace OtakuShelter.Reviews
 	[DataContract]
 	public class ReadByIdReviewsResponse
 	{
+		[DataMember(Name = "rating")]
+		public double Rating { get; set; }
+		
 		[DataMember(Name = "reviews")]
 		public ICollection<ReadByIdReviewsResponseItem> Reviews { get; set; }
 
 		public async ValueTask ReadById(ReviewsContext context, FilterRequest filter, int mangaId)
 		{
+			Rating = await context.Reviews
+				.Select(r => r.Rating)
+				.AverageAsync();
+			
 			Reviews = await context.Reviews
 				.AsNoTracking()
 				.Where(review => review.MangaId == mangaId)
